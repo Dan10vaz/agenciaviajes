@@ -11,4 +11,4 @@ router.get('/testimoniales', paginaTestimoniales);
 
 router.get('/viajes', paginaViajes);
 
-export default router;
+export default router; 
