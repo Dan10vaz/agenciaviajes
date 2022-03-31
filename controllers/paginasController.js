@@ -34,14 +34,14 @@ const paginaViajes = async (req, res) => {
 //Muestra un viaje por su slug
 const paginaDetalleViaje = async (req, res) =>{
     
-    const {viaje} = req.params;
+    const {slug} = req.params;
 
     try {
-        const resultado = await Viaje.findOne({where: {viaje}});
+        const viaje = await Viaje.findOne({ where : { slug }});
 
-        res.render('viaje' {
-            pagina: 'Informacion Viaje',
-            resultado
+        res.render('viaje', {
+            pagina: "Informacion del Viaje",
+            viaje
         })
     } catch (error) {
         console.log(error)
